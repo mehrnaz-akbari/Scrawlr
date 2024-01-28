@@ -12,7 +12,14 @@ interface Props {
 const VoteRow: FC<Props> = (props) => {
   const { id } = props;
   const { rowList, setRowList } = useContext(ContextWrapper);
-  const handleClick = (): void => {};
+  const handleClick = (): void => {
+    if (rowList) {
+      const newIpVoteList = rowList;
+      newIpVoteList[id].upVoteList.pop();
+      newIpVoteList[id - 1]?.upVoteList.push(id - 1);
+      setRowList?.([...rowList]);
+    }
+  };
 
   const handleAdd = (): void => {
     if (rowList) {

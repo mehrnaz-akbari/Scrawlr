@@ -15,6 +15,7 @@ export const StyledRow = styled.div`
   display: flex;
   align-items: center;
   height: 100px;
+  overflow-x: auto;
   > span {
     margin: 0 8px;
   }

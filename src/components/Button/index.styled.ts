@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledButton = styled.span`
   width: 56px;
+  min-width: 56px;
   height: 56px;
   border-radius: 12px;
   background: #f4f6f8;
