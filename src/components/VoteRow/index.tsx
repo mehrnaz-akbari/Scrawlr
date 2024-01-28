@@ -1,29 +1,30 @@
-import { FC, useState } from "react";
+import { FC, useContext } from "react";
+// Context
+import { ContextWrapper } from "../../context";
 // Common Coponents
 import IconButton from "../IconButton";
 // Styles
 import { StyledContainer, StyledRow } from "./index.styled";
 
 interface Props {
-  upVote: () => void;
+  id: number;
 }
 const VoteRow: FC<Props> = (props) => {
-  const { upVote } = props;
-  const [list, setList] = useState<number[]>([]);
-  const handleClick = (): void => {
-    upVote();
-    
-  };
+  const { id } = props;
+  const { rowList, setRowList } = useContext(ContextWrapper);
+  const handleClick = (): void => {};
+
   const handleAdd = (): void => {
-    const newNumber = list[length - 1] + 1;
-    const currentList = [...list];
-    currentList.push(newNumber);
-    setList(currentList);
+    if (rowList) {
+      const newIpVoteList = rowList;
+      newIpVoteList[id].upVoteList.push(id);
+      setRowList?.([...rowList]);
+    }
   };
   return (
     <StyledContainer>
       <StyledRow>
-        {list.map((item) => (
+        {rowList?.[id]?.upVoteList.map((item) => (
           <IconButton icon="up" key={item} onClick={handleClick} />
         ))}
       </StyledRow>

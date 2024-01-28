@@ -5,7 +5,7 @@ export const StyledContainer = styled.div`
   margin: 24px 0;
   display: flex;
   justify-content: space-evenly;
-  align-items:center;
+  align-items: center;
 `;
 
 export const StyledRow = styled.div`
@@ -15,7 +15,7 @@ export const StyledRow = styled.div`
   display: flex;
   align-items: center;
   height: 100px;
-  >span{
+  > span {
     margin: 0 8px;
   }
 `;

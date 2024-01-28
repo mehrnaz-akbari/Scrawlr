@@ -4,10 +4,11 @@ export const StyledButton = styled.span`
   width: 56px;
   height: 56px;
   border-radius: 12px;
-  background: #F4F6F8;
+  background: #f4f6f8;
   cursor: pointer;
-  &:focus,&:hover {
-    background: #E5E8FD;
+  &:focus,
+  &:hover {
+    background: #e5e8fd;
     svg {
       path {
         fill: #253cf2;
@@ -19,7 +20,6 @@ export const StyledButton = styled.span`
   align-items: center;
   justify-content: center;
   svg {
- 
     path {
       fill: #343a40;
       stroke: #343a40;
