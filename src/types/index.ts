@@ -1,8 +1,7 @@
-import { Dispatch, SetStateAction } from "react";
 
 export interface InitialState {
   rowList?: Row[];
-  setRowList?: Dispatch<SetStateAction<Row[]>>;
+  handleRowsList?: (rows:Row[]) =>void ;
 }
 export interface Row {
   key: number;

@@ -11,13 +11,13 @@ interface Props {
 }
 const VoteRow: FC<Props> = (props) => {
   const { id } = props;
-  const { rowList, setRowList } = useContext(ContextWrapper);
+  const { rowList, handleRowsList } = useContext(ContextWrapper);
   const handleClick = (): void => {
     if (rowList) {
       const newIpVoteList = rowList;
       newIpVoteList[id].upVoteList.pop();
       newIpVoteList[id - 1]?.upVoteList.push(id - 1);
-      setRowList?.([...rowList]);
+      handleRowsList?.([...rowList]);
     }
   };
 
@@ -25,14 +25,14 @@ const VoteRow: FC<Props> = (props) => {
     if (rowList) {
       const newIpVoteList = rowList;
       newIpVoteList[id].upVoteList.push(id);
-      setRowList?.([...rowList]);
+      handleRowsList?.([...rowList]);
     }
   };
   return (
     <StyledContainer>
       <StyledRow>
         {rowList?.[id]?.upVoteList.map((item) => (
-          <IconButton icon="up" key={item} onClick={handleClick} />
+          <IconButton icon="up" key={`vote-${item}-${id}`} onClick={handleClick} />
         ))}
       </StyledRow>
       <IconButton icon="plus" onClick={handleAdd} size={38} />
