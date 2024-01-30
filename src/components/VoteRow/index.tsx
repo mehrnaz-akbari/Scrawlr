@@ -13,29 +13,25 @@ const VoteRow: FC<Props> = (props) => {
   const { id } = props;
   const { rowList, handleRowsList } = useContext(ContextWrapper);
   const handleClick = (): void => {
-    if (rowList) {
-      const newIpVoteList = rowList;
-      newIpVoteList[id].upVoteList.pop();
-      newIpVoteList[id - 1]?.upVoteList.push(id - 1);
-      handleRowsList?.([...rowList]);
-    }
+    handleRowsList?.("vote", id);
   };
 
   const handleAdd = (): void => {
-    if (rowList) {
-      const newIpVoteList = rowList;
-      newIpVoteList[id].upVoteList.push(id);
-      handleRowsList?.([...rowList]);
-    }
+    handleRowsList?.("add", id);
   };
   return (
-    <StyledContainer>
-      <StyledRow>
+    <StyledContainer data-testid={`main-row-${id}`}>
+      <StyledRow data-testid={`row-${id}`}>
         {rowList?.[id]?.upVoteList.map((item) => (
-          <IconButton icon="up" key={`vote-${item}-${id}`} onClick={handleClick} />
+          <IconButton
+            icon="up"
+            key={`vote-${item}-${id}`}
+            testId={`vote-${item}-${id}`}
+            onClick={handleClick}
+          />
         ))}
       </StyledRow>
-      <IconButton icon="plus" onClick={handleAdd} size={38} />
+      <IconButton icon="plus" testId={`add-${id}`} onClick={handleAdd} size={38} />
     </StyledContainer>
   );
 };

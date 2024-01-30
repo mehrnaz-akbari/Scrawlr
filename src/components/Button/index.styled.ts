@@ -1,21 +1,26 @@
 import styled from "styled-components";
 
-export const StyledButton = styled.span`
+export const StyledButton = styled.button`
   width: 56px;
   min-width: 56px;
   height: 56px;
   border-radius: 12px;
   background: #f4f6f8;
+  outline: none;
   cursor: pointer;
-  &:focus,
+  font-size: 0px;
   &:hover {
     background: #e5e8fd;
+    border: none;
     svg {
       path {
         fill: #253cf2;
         stroke: #253cf2;
       }
     }
+  }
+  &:focus-visible {
+    outline: none;
   }
   display: flex;
   align-items: center;

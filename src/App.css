@@ -1,5 +1,4 @@
 body {
- 
   background-color: #e4e3e3;
 }
 #root{
@@ -8,11 +7,4 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-}
-.card{
-  display: block;
-  margin: 5% auto 0;
-  background-color: #fff;
-  width: 60%;
-  padding: 24px;
 }

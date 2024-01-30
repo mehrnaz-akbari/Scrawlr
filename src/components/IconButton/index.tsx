@@ -8,12 +8,13 @@ interface Props {
   onClick: () => void;
   icon?: "up" | "plus";
   size?: number;
+  testId: string;
 }
 const IconButton: FC<Props> = (props) => {
-  const { onClick, icon, size } = props;
+  const { onClick, icon, size ,testId} = props;
   const currentSize = size ?? 32;
   return (
-    <Button onClick={onClick}>
+    <Button onClick={onClick} testId={testId}>
       {icon === "up" ? (
         <ArrowIcon size={currentSize} />
       ) : icon === "plus" ? (

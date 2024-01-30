@@ -6,6 +6,9 @@ export const StyledContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  > button {
+    outline: none;
+  }
 `;
 
 export const StyledRow = styled.div`
@@ -16,7 +19,8 @@ export const StyledRow = styled.div`
   align-items: center;
   height: 100px;
   overflow-x: auto;
-  > span {
+  > button {
     margin: 0 8px;
+    outline: none;
   }
 `;
